@@ -1,0 +1,50 @@
+<!-- relatorios/templates/relatorios/relatorio_estoque.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Estoque</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Relatório de Estoque</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID Produto</th>
+                <th>Nome</th>
+                <th>Valor Unitário</th>
+                <th>Quantidade</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in dados_estoque %}
+                <tr>
+                    <td>{{ item.idProduto }}</td>
+                    <td>{{ item.nome }}</td>
+                    <td>{{ item.valorUnitario }}</td>
+                    <td>{{ item.quantidade }}</td>
+                    <td>{{ item.descricao }}</td>
+                    <td>{{ item.categoria }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
