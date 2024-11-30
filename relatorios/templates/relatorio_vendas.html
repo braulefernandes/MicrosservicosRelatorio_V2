@@ -1,0 +1,27 @@
+<h1>Relatório de Vendas</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID Venda</th>
+            <th>Data da Venda</th>
+            <th>Valor Total</th>
+            <th>Produtos</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for venda in vendas %}
+        <tr>
+            <td>{{ venda.id_venda }}</td>
+            <td>{{ venda.data_venda }}</td>
+            <td>{{ venda.valor_total }}</td>
+            <td>
+                <ul>
+                    {% for item in venda.itens_venda.all %}
+                    <li>Produto ID: {{ item.produto_id }} - Quantidade: {{ item.quantidade }} - Valor Unitário: {{ item.valor_unitario }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
