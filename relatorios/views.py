@@ -2,6 +2,11 @@ import requests
 from django.shortcuts import render, redirect
 from .models import RelatorioEstoque, RelatorioVenda, ItemVenda
 
+# Página inicial
+def home(request):
+    return render(request, 'home.html')
+
+
 def obter_estoque(request):
     url_estoque = "https://estoquepadaria-production-bf51.up.railway.app/estoque/todos"
     try:
@@ -30,10 +35,6 @@ def obter_estoque(request):
     # Renderiza o template ou redireciona para o relatório atualizado
     return redirect('relatorio_estoque')
 
-
-# Página inicial
-def home(request):
-    return render(request, 'home.html')
 
 # Página de relatório de estoque
 def relatorio_estoque(request):
@@ -84,5 +85,3 @@ def relatorio_vendas(request):
     # Obtém todas as vendas registradas no banco de dados
     vendas = RelatorioVenda.objects.all()
     return render(request, 'relatorio_vendas.html', {'vendas': vendas})
-
-
