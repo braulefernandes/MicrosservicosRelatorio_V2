@@ -1,0 +1,59 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem vindo ao Sistema de Relatórios</h1>
+        <p>Escolha um dos relatórios abaixo para visualizar:</p>
+        
+        <a href="{% url 'relatorio_estoque' %}">
+            <button>Relatório de Estoque</button>
+        </a>
+        <a href="{% url 'relatorio_vendas' %}">
+            <button>Relatório de Vendas</button>
+        </a>
+    </div>
+</body>
+</html>
