@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'relatorioGeral.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': db_url(os.getenv('DATABASE_URL'))
+    'default': db_url(os.getenv('RAILWAY_PRIVATE_DOMAIN'))
 }
 
 # Password validation
